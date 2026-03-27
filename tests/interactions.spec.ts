@@ -24,9 +24,10 @@ test.describe('Interactions Page', () => {
       await expect(interactionsPage.doubleClickOutput).not.toBeEmpty();
     });
 
-    test('should handle right click', async () => {
+    test('should handle right click and show context menu', async ({ page }) => {
       await interactionsPage.performRightClick();
-      await expect(interactionsPage.rightClickOutput).not.toBeEmpty();
+      const contextMenu = page.locator('#context-menu');
+      await expect(contextMenu).toBeVisible();
     });
   });
 

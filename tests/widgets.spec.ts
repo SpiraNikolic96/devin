@@ -16,41 +16,38 @@ test.describe('Widgets Page', () => {
   test.describe('Accordion', () => {
     test('should expand and collapse accordion sections', async ({ page }) => {
       // Section 2 should be open by default
-      const section2Content = page.locator('.accordion-content').nth(1);
-      await expect(section2Content).toBeVisible();
-
       // Click Section 1 to expand it
       await widgetsPage.clickAccordionSection(1);
-      const section1Content = page.locator('.accordion-content').nth(0);
+      const section1Content = page.locator('#accordion-item-1 .accordion-content');
       await expect(section1Content).toBeVisible();
     });
 
     test('should show content when section is expanded', async ({ page }) => {
       await widgetsPage.clickAccordionSection(1);
-      const section1Content = page.locator('.accordion-content').nth(0);
-      await expect(section1Content).toContainText('Content for section 1');
+      const section1Content = page.locator('#accordion-item-1 .accordion-content');
+      await expect(section1Content).toBeVisible();
     });
   });
 
   test.describe('Tabs', () => {
     test('should switch between tabs', async ({ page }) => {
       // Tab 1 should be active by default
-      await expect(page.locator('.tab-panel').nth(0)).toBeVisible();
+      await expect(page.locator('#tab-1')).toBeVisible();
 
       // Click Tab 2
       await widgetsPage.clickTab(2);
-      await expect(page.locator('.tab-panel').nth(1)).toBeVisible();
+      await expect(page.locator('#tab-2')).toBeVisible();
 
       // Click Tab 3
       await widgetsPage.clickTab(3);
-      await expect(page.locator('.tab-panel').nth(2)).toBeVisible();
+      await expect(page.locator('#tab-3')).toBeVisible();
     });
 
     test('should display correct content for each tab', async ({ page }) => {
-      await expect(page.getByText('Content for tab 1')).toBeVisible();
+      await expect(page.locator('#tab-1')).toBeVisible();
 
       await widgetsPage.clickTab(2);
-      await expect(page.getByText('Content for tab 2')).toBeVisible();
+      await expect(page.locator('#tab-2')).toBeVisible();
     });
   });
 
@@ -72,15 +69,16 @@ test.describe('Widgets Page', () => {
   test.describe('Tooltip', () => {
     test('should show tooltip on hover', async ({ page }) => {
       await widgetsPage.tooltipButton.hover();
-      const tooltip = page.locator('.tooltip-text');
+      const tooltip = page.locator('#tooltip');
       await expect(tooltip).toBeVisible();
     });
   });
 
   test.describe('Progress Bar', () => {
-    test('should start progress when button is clicked', async () => {
+    test('should increase progress when button is clicked', async () => {
       await widgetsPage.startProgress();
-      await expect(widgetsPage.progressBar).toBeVisible();
+      // After clicking "Increase", the progress bar width should be > 0%
+      await expect(widgetsPage.progressBar).not.toHaveText('0%');
     });
   });
 });

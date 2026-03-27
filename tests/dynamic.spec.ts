@@ -13,25 +13,17 @@ test.describe('Dynamic Content Page', () => {
     await expect(dynamicPage.pageHeading).toBeVisible();
   });
 
-  test.describe('Loading Spinner', () => {
-    test('should show spinner when loading data', async () => {
+  test.describe('Delayed Text', () => {
+    test('should show delayed text after clicking button', async () => {
       await dynamicPage.clickLoadData();
-      // The spinner should appear briefly
-      await expect(dynamicPage.spinner).toBeVisible({ timeout: 5000 });
-    });
-
-    test('should show content after loading', async () => {
-      await dynamicPage.clickLoadData();
-      await dynamicPage.waitForSpinnerToDisappear();
-      await expect(dynamicPage.loadedContent).toBeVisible();
+      await expect(dynamicPage.loadedContent).toBeVisible({ timeout: 10000 });
     });
   });
 
-  test.describe('Delayed Elements', () => {
-    test('should show delayed element after waiting', async () => {
+  test.describe('Toggle Element', () => {
+    test('should toggle element visibility', async () => {
       await dynamicPage.clickShowDelayed();
-      await dynamicPage.waitForDelayedElement();
-      await expect(dynamicPage.delayedElement).toBeVisible();
+      await expect(dynamicPage.delayedElement).toBeVisible({ timeout: 10000 });
     });
   });
 

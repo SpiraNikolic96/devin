@@ -15,16 +15,16 @@ export class BasePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.logo = page.locator('a.logo');
-    this.navForms = page.getByRole('link', { name: 'Forms' });
-    this.navInteractions = page.getByRole('link', { name: 'Interactions' });
-    this.navWidgets = page.getByRole('link', { name: 'Widgets' });
-    this.navTables = page.getByRole('link', { name: 'Tables' });
-    this.navAlerts = page.getByRole('link', { name: 'Alerts' });
-    this.navWindows = page.getByRole('link', { name: 'Windows' });
-    this.navFiles = page.getByRole('link', { name: 'Files' });
-    this.navDynamic = page.getByRole('link', { name: 'Dynamic' });
-    this.navBroken = page.getByRole('link', { name: 'Broken' });
+    this.logo = page.locator('a.nav-logo');
+    this.navForms = page.locator('nav').getByRole('link', { name: 'Forms' });
+    this.navInteractions = page.locator('nav').getByRole('link', { name: 'Interactions' });
+    this.navWidgets = page.locator('nav').getByRole('link', { name: 'Widgets' });
+    this.navTables = page.locator('nav').getByRole('link', { name: 'Tables' });
+    this.navAlerts = page.locator('nav').getByRole('link', { name: 'Alerts' });
+    this.navWindows = page.locator('nav').getByRole('link', { name: 'Windows' });
+    this.navFiles = page.locator('nav').getByRole('link', { name: 'Files' });
+    this.navDynamic = page.locator('nav').getByRole('link', { name: 'Dynamic' });
+    this.navBroken = page.locator('nav').getByRole('link', { name: 'Broken' });
   }
 
   async navigateToForms(): Promise<void> {

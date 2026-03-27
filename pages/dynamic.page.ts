@@ -25,20 +25,20 @@ export class DynamicContentPage extends BasePage {
     this.pageHeading = page.getByRole('heading', { name: 'Dynamic Content Testing' });
 
     // Loading Spinner
-    this.loadDataButton = page.locator('#load-data-btn');
+    this.loadDataButton = page.locator('#delayed-text-btn');
     this.spinner = page.locator('.spinner');
-    this.loadedContent = page.locator('#loaded-content');
+    this.loadedContent = page.locator('#delayed-text');
 
     // Delayed Elements
-    this.showDelayedButton = page.locator('#show-delayed-btn');
-    this.delayedElement = page.locator('#delayed-element');
+    this.showDelayedButton = page.locator('#toggle-btn');
+    this.delayedElement = page.locator('#hidden-element');
 
     // AJAX Content
-    this.loadAjaxButton = page.locator('#load-ajax-btn');
+    this.loadAjaxButton = page.locator('#ajax-load-btn');
     this.ajaxContent = page.locator('#ajax-content');
 
     // Infinite Scroll
-    this.scrollContainer = page.locator('#scroll-container');
+    this.scrollContainer = page.locator('#infinite-scroll');
   }
 
   async goto(): Promise<void> {

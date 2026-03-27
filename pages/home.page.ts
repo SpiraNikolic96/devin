@@ -18,15 +18,15 @@ export class HomePage extends BasePage {
     super(page);
     this.heading = page.getByRole('heading', { name: 'Test Automation Playground' });
     this.subtitle = page.getByText('Practice your automation testing skills');
-    this.formsCard = page.locator('.card', { hasText: 'Forms' });
-    this.interactionsCard = page.locator('.card', { hasText: 'Interactions' });
-    this.widgetsCard = page.locator('.card', { hasText: 'Widgets' });
-    this.tablesCard = page.locator('.card', { hasText: 'Tables' });
-    this.alertsCard = page.locator('.card', { hasText: 'Alerts' });
-    this.windowsCard = page.locator('.card', { hasText: 'Windows' });
-    this.filesCard = page.locator('.card', { hasText: 'Files' });
-    this.dynamicCard = page.locator('.card', { hasText: 'Dynamic Content' });
-    this.brokenCard = page.locator('.card', { hasText: 'Broken Elements' });
+    this.formsCard = page.locator('#card-forms');
+    this.interactionsCard = page.locator('#card-interactions');
+    this.widgetsCard = page.locator('#card-widgets');
+    this.tablesCard = page.locator('#card-tables');
+    this.alertsCard = page.locator('#card-alerts');
+    this.windowsCard = page.locator('#card-windows');
+    this.filesCard = page.locator('#card-files');
+    this.dynamicCard = page.locator('#card-dynamic');
+    this.brokenCard = page.locator('#card-broken');
   }
 
   async goto(): Promise<void> {

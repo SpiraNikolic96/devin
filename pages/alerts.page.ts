@@ -27,22 +27,22 @@ export class AlertsPage extends BasePage {
     this.pageHeading = page.getByRole('heading', { name: 'Alerts Testing' });
 
     // JavaScript Alert
-    this.jsAlertButton = page.locator('#js-alert');
+    this.jsAlertButton = page.locator('#alert-btn');
     this.alertOutput = page.locator('#alert-output');
 
     // Confirm Dialog
-    this.confirmButton = page.locator('#js-confirm');
+    this.confirmButton = page.locator('#confirm-btn');
     this.confirmOutput = page.locator('#confirm-output');
 
     // Prompt Dialog
-    this.promptButton = page.locator('#js-prompt');
+    this.promptButton = page.locator('#prompt-btn');
     this.promptOutput = page.locator('#prompt-output');
 
     // Toast Notifications
-    this.successToastButton = page.locator('#toast-success');
-    this.errorToastButton = page.locator('#toast-error');
-    this.infoToastButton = page.locator('#toast-info');
-    this.warningToastButton = page.locator('#toast-warning');
+    this.successToastButton = page.locator('#toast-success-btn');
+    this.errorToastButton = page.locator('#toast-error-btn');
+    this.infoToastButton = page.locator('#toast-info-btn');
+    this.warningToastButton = page.locator('#toast-warning-btn');
   }
 
   async goto(): Promise<void> {

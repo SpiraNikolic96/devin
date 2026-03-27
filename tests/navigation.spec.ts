@@ -36,7 +36,7 @@ test.describe('Navigation', () => {
 
     // Navigate back to home via logo
     await basePage.navigateToHome();
-    await expect(page).toHaveURL(/apptesting\.pl\/?$/);
+    await expect(page).toHaveURL(/apptesting\.pl\/(index\.html)?$/);
   });
 
   test('should have correct page titles', async ({ page }) => {

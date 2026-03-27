@@ -68,22 +68,22 @@ export class FormsPage extends BasePage {
     this.urlInput = page.locator('#url-input');
 
     // Textarea
-    this.messageTextarea = page.locator('#message');
+    this.messageTextarea = page.locator('#textarea');
 
     // Checkboxes
-    this.checkbox1 = page.locator('#checkbox1');
-    this.checkbox2 = page.locator('#checkbox2');
-    this.checkbox3 = page.locator('#checkbox3');
+    this.checkbox1 = page.locator('#checkbox-1');
+    this.checkbox2 = page.locator('#checkbox-2');
+    this.checkbox3 = page.locator('#checkbox-3');
     this.disabledCheckbox = page.locator('#checkbox-disabled');
 
     // Radio Buttons
-    this.radio1 = page.locator('#radio1');
-    this.radio2 = page.locator('#radio2');
-    this.radio3 = page.locator('#radio3');
+    this.radio1 = page.locator('#radio-1');
+    this.radio2 = page.locator('#radio-2');
+    this.radio3 = page.locator('#radio-3');
     this.disabledRadio = page.locator('#radio-disabled');
 
     // Dropdowns
-    this.singleSelect = page.locator('#single-select');
+    this.singleSelect = page.locator('#dropdown');
 
     // Date and Time
     this.datePicker = page.locator('#date-picker');
@@ -103,12 +103,12 @@ export class FormsPage extends BasePage {
 
     // Form Actions
     this.fullNameInput = page.locator('#full-name');
-    this.formEmailInput = page.locator('#form-email');
-    this.formMessageTextarea = page.locator('#form-message');
-    this.termsCheckbox = page.locator('#terms');
-    this.submitButton = page.getByRole('button', { name: 'Submit Form' });
-    this.resetButton = page.getByRole('button', { name: 'Reset Form' });
-    this.clearOutputButton = page.getByRole('button', { name: 'Clear Output' });
+    this.formEmailInput = page.locator('#submit-email');
+    this.formMessageTextarea = page.locator('#submit-message');
+    this.termsCheckbox = page.locator('#agree-terms');
+    this.submitButton = page.locator('#submit-btn');
+    this.resetButton = page.locator('#reset-btn');
+    this.clearOutputButton = page.locator('#clear-btn');
   }
 
   async goto(): Promise<void> {

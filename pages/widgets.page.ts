@@ -36,31 +36,31 @@ export class WidgetsPage extends BasePage {
     this.pageHeading = page.getByRole('heading', { name: 'Widgets Testing' });
 
     // Accordion
-    this.accordionSection1 = page.locator('.accordion-header', { hasText: 'Section 1' });
-    this.accordionSection2 = page.locator('.accordion-header', { hasText: 'Section 2' });
-    this.accordionSection3 = page.locator('.accordion-header', { hasText: 'Section 3' });
+    this.accordionSection1 = page.locator('#accordion-header-1');
+    this.accordionSection2 = page.locator('#accordion-header-2');
+    this.accordionSection3 = page.locator('#accordion-header-3');
 
     // Tabs
-    this.tab1 = page.locator('.tab-button', { hasText: 'Tab 1' });
-    this.tab2 = page.locator('.tab-button', { hasText: 'Tab 2' });
-    this.tab3 = page.locator('.tab-button', { hasText: 'Tab 3' });
+    this.tab1 = page.locator('#tab-btn-1');
+    this.tab2 = page.locator('#tab-btn-2');
+    this.tab3 = page.locator('#tab-btn-3');
     this.tabContent = page.locator('.tab-content');
 
     // Modal
-    this.openModalButton = page.getByRole('button', { name: 'Open Modal' });
-    this.modal = page.locator('#modal');
+    this.openModalButton = page.locator('#modal-trigger');
+    this.modal = page.locator('#modal-1');
     this.modalCloseButton = page.locator('.modal-close');
     this.modalTitle = page.locator('.modal-header h3');
 
     // Tooltip
-    this.tooltipButton = page.locator('.tooltip-trigger');
+    this.tooltipButton = page.locator('#tooltip-btn');
 
     // Progress Bar
-    this.startProgressButton = page.getByRole('button', { name: 'Start Progress' });
-    this.progressBar = page.locator('.progress-bar');
+    this.startProgressButton = page.locator('#progress-section button');
+    this.progressBar = page.locator('#progress-bar');
 
     // Autocomplete
-    this.autocompleteInput = page.locator('#autocomplete-input');
+    this.autocompleteInput = page.locator('#autocomplete');
   }
 
   async goto(): Promise<void> {
@@ -68,12 +68,12 @@ export class WidgetsPage extends BasePage {
   }
 
   async clickAccordionSection(section: number): Promise<void> {
-    const sectionLocator = this.page.locator('.accordion-header').nth(section - 1);
+    const sectionLocator = this.page.locator(`#accordion-header-${section}`);
     await sectionLocator.click();
   }
 
   async clickTab(tabNumber: number): Promise<void> {
-    const tab = this.page.locator('.tab-button').nth(tabNumber - 1);
+    const tab = this.page.locator(`#tab-btn-${tabNumber}`);
     await tab.click();
   }
 

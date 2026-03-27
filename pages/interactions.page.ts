@@ -41,9 +41,9 @@ export class InteractionsPage extends BasePage {
     this.pageHeading = page.getByRole('heading', { name: 'Interactions Testing' });
 
     // Drag and Drop
-    this.draggableItem = page.locator('#draggable');
-    this.dropZone = page.locator('#droppable');
-    this.dragDropOutput = page.locator('#drag-output');
+    this.draggableItem = page.locator('#draggable-item');
+    this.dropZone = page.locator('#drop-zone');
+    this.dragDropOutput = page.locator('#drag-drop-output');
 
     // Multiple Draggable Items
     this.draggableItem1 = page.locator('#drag-item-1');
@@ -59,18 +59,18 @@ export class InteractionsPage extends BasePage {
     this.resizableElement = page.locator('#resizable');
 
     // Click Events
-    this.singleClickButton = page.locator('#click-button');
-    this.singleClickOutput = page.locator('#click-output');
+    this.singleClickButton = page.locator('#single-click-btn');
+    this.singleClickOutput = page.locator('#single-click-output');
     this.doubleClickArea = page.locator('#double-click-area');
     this.doubleClickOutput = page.locator('#double-click-output');
-    this.rightClickArea = page.locator('#right-click-area');
-    this.rightClickOutput = page.locator('#right-click-output');
+    this.rightClickArea = page.locator('#context-menu-area');
+    this.rightClickOutput = page.locator('#context-menu-output');
 
     // Hover Events
-    this.hoverArea = page.locator('#hover-area');
+    this.hoverArea = page.locator('#hover-target');
 
     // Keyboard Events
-    this.keyboardInput = page.locator('#key-input');
+    this.keyboardInput = page.locator('#keyboard-input');
   }
 
   async goto(): Promise<void> {

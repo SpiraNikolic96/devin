@@ -64,7 +64,7 @@ test.describe('Forms Page', () => {
     });
 
     test('should have pre-checked checkbox', async () => {
-      await expect(formsPage.checkbox2).toBeChecked();
+      await expect(formsPage.checkbox3).toBeChecked();
     });
 
     test('should have disabled checkbox', async () => {
