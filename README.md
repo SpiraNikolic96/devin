@@ -27,12 +27,21 @@ Playwright + TypeScript test automation project for [Test Automation Playground]
 │   └── navigation.spec.ts     # Navigation tests
 ```
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- npm (comes with Node.js)
+
 ## Setup
+
+After cloning the repository, install dependencies and browsers:
 
 ```bash
 npm install
 npx playwright install --with-deps
 ```
+
+> **Note:** You must run `npm install` first to install all project dependencies including `@playwright/test`. Then `npx playwright install --with-deps` downloads the browser binaries (Chromium, Firefox, WebKit) needed to run the tests.
 
 ## Running Tests
 
